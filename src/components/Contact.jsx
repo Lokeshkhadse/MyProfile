@@ -15,10 +15,10 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-gray-800 text-white px-6">
-            <div className="max-w-2xl mx-auto">
+        <section id="contact" className="pt-28 pb-20 bg-gray-800 text-white px-4 sm:px-6 md:px-8 min-h-screen">
+            <div className="max-w-2xl md:max-w-4xl mx-auto">
                 <motion.h2
-                    className="text-3xl font-bold mb-6 text-center text-cyan-400"
+                    className="text-2xl sm:text-3xl font-bold mb-8 text-center text-cyan-400"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
@@ -27,27 +27,29 @@ const Contact = () => {
                     Get in Touch
                 </motion.h2>
                 <motion.div
-                    className="flex flex-col md:flex-row gap-10 mb-10"
+                    className="flex flex-col lg:flex-row gap-10 mb-10"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
                     {/* Contact Info */}
-                    <div className="flex-1 space-y-5">
-                        <div className="flex items-center gap-3">
-                            <FaEnvelope className="text-cyan-400 text-xl" />
-                            <span className="text-gray-200">lokeshkhadse19@gmail.com</span>
+                    <div className="flex-1 flex flex-col gap-2">
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3 justify-start">
+                                <FaEnvelope className="text-cyan-400 text-xl" />
+                                <span className="text-gray-200 break-all text-left">lokeshkhadse19@gmail.com</span>
+                            </div>
+                            <div className="flex items-center gap-3 justify-start">
+                                <FaPhoneAlt className="text-cyan-400 text-xl" />
+                                <span className="text-gray-200 text-left">+91 9665952003</span>
+                            </div>
+                            <div className="flex items-center gap-3 justify-start">
+                                <FaMapMarkerAlt className="text-cyan-400 text-xl" />
+                                <span className="text-gray-200 text-left">Pune, India</span>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <FaPhoneAlt className="text-cyan-400 text-xl" />
-                            <span className="text-gray-200">+91 9665952003</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <FaMapMarkerAlt className="text-cyan-400 text-xl" />
-                            <span className="text-gray-200">Pune, India</span>
-                        </div>
-                        <div className="flex items-center gap-4 mt-4">
+                        <div className="flex items-center gap-4 mt-6 justify-start">
                             <a
                                 href="https://www.linkedin.com/in/lokesh-khadse"
                                 target="_blank"
@@ -79,7 +81,7 @@ const Contact = () => {
                     </div>
                     {/* Contact Form */}
                     <motion.form
-                        className="flex-1 bg-gray-900 rounded-xl p-6 shadow-lg space-y-5"
+                        className="flex-1 bg-gray-900 rounded-xl p-4 sm:p-6 shadow-lg space-y-5"
                         onSubmit={handleSubmit}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

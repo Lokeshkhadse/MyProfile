@@ -5,12 +5,12 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaHeart } from 'react-ico
 const Footer = () => {
     return (
         <motion.footer
-            className="bg-black text-white py-6 text-center flex flex-col items-center gap-2"
+            className="bg-black text-white py-6 px-4 sm:px-8 text-center flex flex-col items-center gap-2 w-full"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
         >
-            <div className="flex gap-6 mb-2">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-2 w-full">
                 <a
                     href="https://github.com/Lokeshkhadse"
                     target="_blank"
@@ -43,10 +43,10 @@ const Footer = () => {
                     <FaWhatsapp />
                 </a>
             </div>
-            <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+            <div className="flex items-center justify-center gap-2 text-gray-400 text-sm w-full flex-wrap">
                 Crafted with <FaHeart className="text-red-500 mx-1" /> by Lokesh Khadse
             </div>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 w-full text-center">
                 &copy; {new Date().getFullYear()} Lokesh Khadse. All rights reserved.
             </p>
         </motion.footer>

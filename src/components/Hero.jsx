@@ -45,21 +45,21 @@ const Hero = () => {
 
     return (
         <section
-            className="h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-800 text-white px-4 pt-20"
+            className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-800 text-white px-4 pt-28 sm:pt-32"
             id="hero"
         >
-            <div className="text-center flex flex-col items-center">
+            <div className="text-center flex flex-col items-center w-full">
                 {/* Profile Picture */}
                 <motion.img
                     src={profilePic}
                     alt="Lokesh Khadse"
-                    className="w-32 h-32 rounded-full object-cover border-4 border-cyan-400 shadow-lg mb-6"
+                    className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-cyan-400 shadow-lg mb-6"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.7 }}
                 />
                 <motion.h1
-                    className="text-4xl sm:text-6xl font-bold"
+                    className="text-3xl sm:text-5xl md:text-6xl font-bold"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -67,7 +67,7 @@ const Hero = () => {
                     Hi, I'm <span className="text-cyan-400">LOKESH KHADSE</span>
                 </motion.h1>
                 <motion.p
-                    className="mt-4 text-2xl sm:text-3xl font-semibold text-cyan-300 min-h-[2.5rem]"
+                    className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-cyan-300 min-h-[2.5rem]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
@@ -76,7 +76,7 @@ const Hero = () => {
                     <span className="animate-pulse">|</span>
                 </motion.p>
                 <motion.p
-                    className="mt-4 text-lg text-gray-300 max-w-xl mx-auto"
+                    className="mt-4 text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mx-auto"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 0.8 }}
@@ -85,7 +85,7 @@ const Hero = () => {
                 </motion.p>
                 <motion.a
                     href="#projects"
-                    className="inline-flex items-center mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-semibold transition"
+                    className="inline-flex items-center mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-semibold transition text-base sm:text-lg"
                     whileHover={{ scale: 1.07 }}
                 >
                     View My Work <FaArrowRight className="ml-2" />

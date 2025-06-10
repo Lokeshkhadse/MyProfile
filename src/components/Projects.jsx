@@ -68,10 +68,10 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white px-6">
+    <section id="projects" className="pt-28 pb-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 sm:px-6 md:px-8 min-h-screen">
       <div className="max-w-5xl mx-auto">
         <motion.h2
-          className="text-3xl font-bold text-center mb-10 text-cyan-400"
+          className="text-2xl sm:text-3xl font-bold text-center mb-10 text-cyan-400"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -91,7 +91,7 @@ const Projects = () => {
                   ${idx % 2 === 0
                     ? 'from-cyan-900 to-gray-800'
                     : 'from-gray-800 to-cyan-900'}
-                  p-6 rounded-xl shadow-2xl flex flex-col sm:flex-row items-center
+                  p-4 sm:p-6 rounded-xl shadow-2xl flex flex-col sm:flex-row items-center
                   ${idx % 2 === 0 ? 'sm:self-start' : 'sm:self-end'}
                   group border border-cyan-700
                 `}
@@ -111,14 +111,14 @@ const Projects = () => {
                 <motion.img
                   src={project.img}
                   alt={project.title}
-                  className="w-28 h-28 object-cover rounded-lg border-4 border-cyan-400 shadow-md mb-4 sm:mb-0 sm:mr-6"
+                  className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg border-4 border-cyan-400 shadow-md mb-4 sm:mb-0 sm:mr-6"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 />
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-1 text-cyan-300">{project.title}</h3>
-                  <div className="text-sm font-semibold text-cyan-200 mb-2">{project.stack}</div>
+                <div className="flex-1 w-full">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 text-cyan-300">{project.title}</h3>
+                  <div className="text-xs sm:text-sm font-semibold text-cyan-200 mb-2">{project.stack}</div>
                   <ul className="list-disc list-inside text-gray-100 space-y-1 pl-2">
                     {project.points.map((point, i) => (
                       <motion.li
@@ -137,7 +137,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-4 text-cyan-300 hover:text-cyan-400 transition text-lg font-semibold"
+                      className="inline-flex items-center gap-2 mt-4 text-cyan-300 hover:text-cyan-400 transition text-base sm:text-lg font-semibold"
                     >
                       <FaGithub className="text-2xl" /> View on GitHub
                     </a>

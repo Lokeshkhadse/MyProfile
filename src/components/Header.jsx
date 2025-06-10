@@ -18,8 +18,7 @@ const Header = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="bg-black text-white fixed w-full top-0 z-50 shadow-md transition duration-300"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
         <motion.h1
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -51,15 +50,24 @@ const Header = () => {
 
         {/* Hamburger Button for Mobile */}
         <button
-          className="sm:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
+          className="sm:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none z-50"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          style={{ position: 'relative' }}
         >
           <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
           <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
+
+      {/* Overlay for mobile menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 z-40 sm:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
 
       {/* Mobile Nav Menu */}
       {menuOpen && (
@@ -68,7 +76,7 @@ const Header = () => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: 200, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="sm:hidden fixed top-0 right-0 h-full w-2/3 max-w-xs bg-black bg-opacity-95 shadow-lg z-50 flex flex-col pt-24 px-8 space-y-8"
+          className="sm:hidden fixed top-0 right-0 h-full w-2/3 max-w-xs bg-black shadow-lg z-50 flex flex-col pt-24 px-8 space-y-8"
         >
           {navLinks.map(link => (
             <a

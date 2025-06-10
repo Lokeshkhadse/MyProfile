@@ -97,10 +97,10 @@ const itemVariants = {
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 bg-gray-900 text-white px-6">
+        <section id="skills" className="pt-28 pb-20 bg-gray-900 text-white px-4 sm:px-6 md:px-8 min-h-screen">
             <div className="max-w-5xl mx-auto text-center">
                 <motion.h2
-                    className="text-3xl font-bold mb-10 text-cyan-400"
+                    className="text-2xl sm:text-3xl font-bold mb-10 text-cyan-400"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
@@ -118,18 +118,18 @@ const Skills = () => {
                             viewport={{ once: true }}
                             variants={listVariants}
                         >
-                            <div className="text-xl font-semibold text-cyan-300 mb-3 flex items-center justify-center gap-2">
+                            <div className="text-lg sm:text-xl font-semibold text-cyan-300 mb-3 flex items-center justify-center gap-2">
                                 {group.category}
                             </div>
-                            <div className="flex flex-wrap justify-center gap-6">
+                            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                                 {group.items.map((skill, i) => (
                                     <motion.div
                                         key={skill.name}
-                                        className="flex flex-col items-center bg-gray-800 px-4 py-3 rounded-xl shadow-md min-w-[120px] hover:scale-105 transition"
+                                        className="flex flex-col items-center bg-gray-800 px-3 py-3 sm:px-4 rounded-xl shadow-md min-w-[100px] sm:min-w-[120px] hover:scale-105 transition"
                                         variants={itemVariants}
                                     >
-                                        <span className="text-3xl mb-1">{skill.icon}</span>
-                                        <span className="font-medium text-gray-100 text-sm">{skill.name}</span>
+                                        <span className="text-2xl sm:text-3xl mb-1">{skill.icon}</span>
+                                        <span className="font-medium text-gray-100 text-xs sm:text-sm">{skill.name}</span>
                                     </motion.div>
                                 ))}
                             </div>

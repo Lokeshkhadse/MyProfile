@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const navLinks = [
@@ -9,6 +9,8 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -27,7 +29,7 @@ const Header = () => {
           Profile
         </motion.h1>
 
-        {/* Nav Menu */}
+        {/* Desktop Nav Menu */}
         <nav className="hidden sm:flex space-x-6 text-sm md:text-base font-medium">
           {navLinks.map(link => (
             <motion.a
@@ -46,7 +48,40 @@ const Header = () => {
             </motion.a>
           ))}
         </nav>
+
+        {/* Hamburger Button for Mobile */}
+        <button
+          className="sm:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
+
+      {/* Mobile Nav Menu */}
+      {menuOpen && (
+        <motion.nav
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 200, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="sm:hidden fixed top-0 right-0 h-full w-2/3 max-w-xs bg-black bg-opacity-95 shadow-lg z-50 flex flex-col pt-24 px-8 space-y-8"
+        >
+          {navLinks.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-lg text-gray-300 hover:text-cyan-400 transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </motion.nav>
+      )}
     </motion.header>
   );
 };

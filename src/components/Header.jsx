@@ -64,32 +64,30 @@ const Header = () => {
 
       {/* Overlay for mobile menu */}
       {menuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-60 z-40 sm:hidden"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile Nav Menu */}
-      {menuOpen && (
-        <motion.nav
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 200, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="sm:hidden fixed top-0 right-0 h-full w-2/3 max-w-xs bg-black shadow-lg z-50 flex flex-col pt-24 px-8 space-y-8"
-        >
-          {navLinks.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-lg text-gray-300 hover:text-cyan-400 transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </motion.nav>
+        <>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-60 z-40 sm:hidden"
+            onClick={() => setMenuOpen(false)}
+          />
+          <motion.nav
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 200, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="sm:hidden fixed top-0 right-0 h-full w-2/3 max-w-xs bg-black shadow-lg z-50 flex flex-col pt-24 px-8 space-y-8"
+          >
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-lg text-gray-300 hover:text-cyan-400 transition-all duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.nav>
+        </>
       )}
     </motion.header>
   );

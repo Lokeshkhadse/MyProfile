@@ -19,7 +19,7 @@ const Header = () => {
       className="bg-black text-white fixed w-full top-0 z-50 shadow-md transition duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
-        <motion.h1
+         <motion.h1
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}

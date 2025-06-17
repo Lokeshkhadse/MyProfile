@@ -25,7 +25,7 @@ const Header = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-2xl font-extrabold tracking-wide text-cyan-400 hover:scale-105 transform transition duration-300"
         >
-          Profile
+          Portfolio
         </motion.h1>
 
         {/* Desktop Nav Menu */}
@@ -49,6 +49,7 @@ const Header = () => {
         </nav>
 
         {/* Hamburger Button for Mobile */}
+        
         <button
           className="sm:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none z-50"
           onClick={() => setMenuOpen(!menuOpen)}

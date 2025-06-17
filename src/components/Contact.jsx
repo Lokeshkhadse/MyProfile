@@ -139,6 +139,8 @@ const Contact = () => {
                         )}
                     </motion.form>
                 </motion.div>
+                
+
             </div>
         </section>
     );
